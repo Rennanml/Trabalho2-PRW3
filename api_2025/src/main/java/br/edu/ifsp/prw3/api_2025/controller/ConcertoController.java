@@ -20,6 +20,6 @@ public class ConcertoController {
     @Transactional
     public void cadastrar(@RequestBody ConcertoDTO dto) {
         repo.save(new Concerto(dto));
-        System.out.println(dto.toString());
+        System.out.println(dto);
     }
 }
