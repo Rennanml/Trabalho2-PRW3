@@ -5,15 +5,18 @@ import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Embeddable
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
 public class Mecanico {
-    String codigo;
-    String nome;
-    int anosExperiencia;
+    private String codigo;
+    @Setter
+    private String nome;
+    @Setter
+    private int anosExperiencia;
 
     public Mecanico(MecanicoDTO dto){
         this.codigo = dto.codigo();

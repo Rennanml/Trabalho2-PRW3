@@ -1,0 +1,1 @@
+ALTER TABLE IF EXISTS consertos ADD COLUMN cor varchar(30);

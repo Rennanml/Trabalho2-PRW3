@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
-    <file url="file://$PROJECT_DIR$/api_2025/src/main/resources/db/migrations/V1__create-table-concertos.sql" dialect="H2" />
+    <file url="file://$PROJECT_DIR$/api_2025/src/main/resources/db/migrations/V1__create-table-consertos.sql" dialect="H2" />
+    <file url="file://$PROJECT_DIR$/api_2025/src/main/resources/db/migrations/V2__insert-col-cor-table-consertos.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/api_2025/src/main/resources/db/migrations/V3__insert-col-ativo-table-consertos.sql" dialect="GenericSQL" />
   </component>
 </project>

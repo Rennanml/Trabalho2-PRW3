@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS concertos;
+DROP TABLE IF EXISTS consertos;
 
-CREATE TABLE concertos(
+CREATE TABLE consertos(
                           id bigint not null auto_increment,
                           data_entrada varchar(20) not null,
                           data_saida varchar(20) not null,
