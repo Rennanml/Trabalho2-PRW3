@@ -58,7 +58,6 @@ public class ConsertoController {
     @PatchMapping
     @Transactional
     public ResponseEntity<ConsertoDTO> update(@RequestBody @Valid DadosPatchConsertoDTO dto){
-        System.out.println("esse é o id -> " + dto.id());
         Optional<Conserto> toBeUpdated = repo.findById(String.valueOf(dto.id()));
         if (toBeUpdated.isPresent()) {
             Conserto conserto = toBeUpdated.get();
