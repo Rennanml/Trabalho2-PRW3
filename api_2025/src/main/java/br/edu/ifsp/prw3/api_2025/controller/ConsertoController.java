@@ -22,8 +22,11 @@ import java.util.Optional;
 @RestController
 @RequestMapping("consertos")
 public class ConsertoController {
-    @Autowired
-    private ConsertoRepository repo;
+    private final ConsertoRepository repo;
+
+    public ConsertoController (ConsertoRepository repo) {
+        this.repo = repo;
+    }
 
     @PostMapping
     @Transactional
