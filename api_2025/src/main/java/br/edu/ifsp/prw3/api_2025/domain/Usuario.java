@@ -1,6 +1,7 @@
 package br.edu.ifsp.prw3.api_2025.domain;
 
 import jakarta.persistence.*;
+import lombok.Getter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,6 +15,7 @@ public class Usuario implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Getter
     private String login;
     private String senha;
 
@@ -55,4 +57,5 @@ public class Usuario implements UserDetails {
         // Return true to indicate the user is enabled
         return true;
     }
+
 }
