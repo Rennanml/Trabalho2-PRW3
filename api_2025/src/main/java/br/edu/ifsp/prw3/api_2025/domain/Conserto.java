@@ -31,9 +31,21 @@ public class Conserto {
     private String dataSaida;
 
     @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "codigo", column = @Column(name = "mecanico_responsavel_codigo", nullable = false)),
+            @AttributeOverride(name = "nome", column = @Column(name = "mecanico_responsavel_nome", nullable = false)),
+            @AttributeOverride(name = "anosExperiencia", column = @Column(name = "mecanico_responsavel_anos_experiencia", nullable = false))
+    })
     private Mecanico mecanicoResponsavel;
 
     @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "placa", column = @Column(name = "veiculo_placa", nullable = false)),
+            @AttributeOverride(name = "marca", column = @Column(name = "veiculo_marca", nullable = false)),
+            @AttributeOverride(name = "modelo", column = @Column(name = "veiculo_modelo", nullable = false)),
+            @AttributeOverride(name = "ano", column = @Column(name = "veiculo_ano", nullable = false)),
+            @AttributeOverride(name = "cor", column = @Column(name = "veiculo_cor", nullable = false))
+    })
     private Veiculo veiculo;
 
     private Boolean ativo;
