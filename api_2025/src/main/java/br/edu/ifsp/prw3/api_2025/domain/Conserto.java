@@ -31,21 +31,9 @@ public class Conserto {
     private String dataSaida;
 
     @Embedded
-    @AttributeOverrides({
-            @AttributeOverride(name = "codigo", column = @Column(name = "mecanico_responsavel_codigo", nullable = false)),
-            @AttributeOverride(name = "nome", column = @Column(name = "mecanico_responsavel_nome", nullable = false)),
-            @AttributeOverride(name = "anosExperiencia", column = @Column(name = "mecanico_responsavel_anos_experiencia", nullable = false))
-    })
     private Mecanico mecanicoResponsavel;
 
     @Embedded
-    @AttributeOverrides({
-            @AttributeOverride(name = "placa", column = @Column(name = "veiculo_placa", nullable = false)),
-            @AttributeOverride(name = "marca", column = @Column(name = "veiculo_marca", nullable = false)),
-            @AttributeOverride(name = "modelo", column = @Column(name = "veiculo_modelo", nullable = false)),
-            @AttributeOverride(name = "ano", column = @Column(name = "veiculo_ano", nullable = false)),
-            @AttributeOverride(name = "cor", column = @Column(name = "veiculo_cor", nullable = false))
-    })
     private Veiculo veiculo;
 
     private Boolean ativo;
@@ -60,22 +48,22 @@ public class Conserto {
 
     public ConsertoDTO toDTO() {
         return new ConsertoDTO(
-                this.dataEntrada,
-                this.dataSaida,
+                        this.dataEntrada,
+                        this.dataSaida,
                 new MecanicoDTO(
-                        this.mecanicoResponsavel.getCodigo(),
-                        this.mecanicoResponsavel.getNome(),
-                        this.mecanicoResponsavel.getAnosExperiencia()
-                ),
+                                this.mecanicoResponsavel.getCodigo(),
+                                this.mecanicoResponsavel.getNome(),
+                                this.mecanicoResponsavel.getAnosExperiencia()
+                        ),
                 new VeiculoDTO(
-                        this.veiculo.getPlaca(),
-                        this.veiculo.getMarca(),
-                        this.veiculo.getModelo(),
-                        this.veiculo.getAno(),
-                        this.veiculo.getCor()
-                ),
+                                this.veiculo.getPlaca(),
+                                this.veiculo.getMarca(),
+                                this.veiculo.getModelo(),
+                                this.veiculo.getAno(),
+                                this.veiculo.getCor()
+                        ),
                 this.ativo
-        );
+                );
     }
 
     public void excluir() {
@@ -84,9 +72,7 @@ public class Conserto {
 
     public void atualizar(DadosPatchConsertoDTO dto) {
         this.dataSaida = dto.dataSaida();
-        if (this.mecanicoResponsavel != null && dto.mecanico() != null) {
-            this.mecanicoResponsavel.setNome(dto.mecanico().nome());
-            this.mecanicoResponsavel.setAnosExperiencia(dto.mecanico().anosExperiencia());
-        }
+        this.mecanicoResponsavel.setNome(dto.mecanico().nome());
+        this.mecanicoResponsavel.setAnosExperiencia(dto.mecanico().anosExperiencia());
     }
 }
